@@ -1,0 +1,133 @@
+﻿@using DocAndDine.Models;
+@{
+    ViewBag.Title = "Restaurants";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Restaurant2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Styles/_Layout.css" rel="stylesheet" />
+    <link href="~/Styles/footer.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <div class="RestaurantHeader">
+        <h2>Restaurants</h2>
+    </div>
+
+    <div class="row" style="background-image:url(../../Content/Images/mid-bg3.jpg);margin-left:15px;">
+        <div id="main-search" class="content-gray hidden-sm hidden-xs">
+            <div class="container">
+
+                <form method="POST" action="RestaurantSearch">
+                    <div class="main-search-fields">
+                        <p class="search-label term">Search Term: </p>
+                        <div class="row">
+                            <input class="search-input" name="keyword" autocomplete="off" type="search">
+                            <input class="submit-btn" name="submit_button" type="submit" value="SEARCH">
+                        </div>
+                        <div class="row">
+                            <!-- <div class="selects-container">
+      <p> Food Type: </p>
+        <select class="selects" name="genre">
+            <option Value="all">All</option>
+            <option Value="bangali">Bangali</option>
+            <option Value="chineese">Chineese</option>
+            <option Value="japaneese">Japaneese</option>
+            <option Value="italian">Italian</option>
+            <option Value="continental">Continental</option>
+
+        </select>
+    </div>-->
+
+                            <div class="selects-container">
+                                <p> Location: </p>
+                                <select class="selects" name="location">
+                                    <option value="all">All</option>
+                                    <option Value="Dhanmondi">Dhanmondi</option>
+                                    <option Value="Khilgaon">Khilgaon</option>
+                                    <option Value="Mirpur">Mirpur</option>
+                                    <option Value="Uttara">Uttara</option>
+                                    <option Value="Basundhara">Basundhara</option>
+                                    <option Value="BaileyRoad">BaileyRoad</option>
+                                    <option Value="Rampura">Rampura</option>
+                                    <option Value="Gulshan">Gulshan</option>
+                                    <option Value="Mohammadpur">Mohammadpur</option>
+                                </select>
+                            </div>
+
+                            <div class="selects-container">
+                                <p> Ratings: </p>
+                                <select class="selects" name="rating">
+                                    <option Value="0">All</option>
+                                    <option Value="4">4+</option>
+                                    <option Value="3">3+</option>
+                                    <option Value="2">2+</option>
+                                    <option Value="1">1+</option>
+
+                                </select>
+                            </div>
+
+                            <div class="selects-container">
+                                <p> Order By: </p>
+                                <select class="selects" name="order_by">
+                                    <option value="None">None</option>
+                                    <option Value="rating">Rating</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row" style="margin-left:45px;">
+        @for (int i = 0; i < Model.Rows.Count; i++)
+        {
+            <div class="col-sm-4 mt-5">
+                <div class="FoodBlock">
+                    <div class="FoodImage">
+
+                        @{
+                            <!--var name = Path.GetFileName(Convert.ToString(Model.Rows[i][4]));!-->
+                            var name = Path.GetFileName(Convert.ToString(Model.Rows[i][5]));
+
+                        }
+                        <img src="~/Content/Images/@name" style="width:100%">
+                    </div>
+                    <div class="tag">
+
+                        <span class="multi-tag">@Model.Rows[i][4]</span>
+                        <!--  <span class="multi-tag">@Model.Rows[i][3]</span>!-->
+                    </div>
+                        <div class="FoodInfo">
+                            <div class="FoodTitle">
+                                <h5>@Model.Rows[i][1]</h5>
+                            </div>
+                            <div class="ChefTitle">
+                                <h6>Rating: @Model.Rows[i][8]</h6>
+                            </div>
+                            <button class="ViewDetailsButton" onclick="location.href='@Url.Action("RestaurantClicked", "Home",new RouteValueDictionary(new { id = Model.Rows[i][0]}))'">View Details >></button>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+    </body>
+    </html>
+
+
+

@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "FullBlog";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Open+Sans|Pacifico&display=swap" rel="stylesheet">
+
+    <link href="~/Content/fullblog.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="blog_name">
+            <h1>@Model.Rows[0][2]</h1>
+        </div>
+        <div>
+            <p>  @Html.ActionLink("Home", "Index", "Home") >> @Html.ActionLink("Food Blogs", "FoodBlogs", "Home") >>  @Html.ActionLink("SIMPLE SWEET AND SOUR SAUCE", "FullBlog", "Home")</p>
+            <p>by <a href="@Url.Action(" Blogger", "Home" )" style="font-style:italic;">@Model.Rows[0][16]</a></p>
+        </div>
+        <div class="summary">
+            <p style=" font-family: 'Pacifico', cursive;font-weight: 400;  font: 50px;color:black">Summary</p>
+            <p style="color:#000">@Model.Rows[0][5]</p>
+        </div>
+        <div class="blog_image">
+            @{
+                var name = Path.GetFileName(Convert.ToString(Model.Rows[0][3]));
+            }
+            <img src="~/Content/Images/@name" style="width:100%">
+        </div>
+        <div class="blagger_name">
+            <p>by <a href="@Url.Action(" Blogger", "Home" )" style="font-style:italic;">@Model.Rows[0][16]</a></p>
+        </div>
+        <div class="description">
+            <p style=" font-family: 'Pacifico', cursive;font-weight: 400;  font: 50px;color:black">Description</p>
+            @Model.Rows[0][6]
+        </div>
+        <!--======comments======-->
+        <div class="comments">
+
+            <h3 class="commentsHeader"><i class="fa fa-comment"></i> Comments:</h3>
+            <hr style="border-top: 1px solid #ccc; background: transparent;">
+            <form method="post" action="BlogComment" id="commentBlogsection">
+                <div class="CommentForm">
+                    <textarea class="AddComment" name="comment_add" type="text" placeholder="Add a new Comment.."></textarea>
+
+                </div>
+                <div class="SubmitComment">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+            @for (int i = 0; i < Model.Rows.Count; i++)
+            {
+                <div class="commentShow">
+                    <h6 class="comName">@Model.Rows[i][26]</h6>
+                    <p class="comPara">@Model.Rows[i][24]</p>
+
+                </div>
+            }
+        </div>
+        <div>
+            <h5>MORE BLOGS....</h5>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="~/Content/Images/recipe1.jpeg" style="width:70%">
+            </div>
+            <div class="col-md-3">
+
+                <img src="~/Content/Images/recipe2.jpg" style="width:70%">
+            </div>
+            <div class="col-md-3">
+                <img src="~/Content/Images/recipe1.jpeg" style="width:70%">
+            </div>
+            <div class="col-md-3">
+
+                <img src="~/Content/Images/recipe2.jpg" style="width:70%">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+            var x = document.getElementById("commentBlogsection");
+              if ('@Session["recipeWriterActive"]' == 0 && '@Session["homechefActive"]' == 0 && '@Session["bloggerActive"]' == 0 && '@Session["userActive"]' == 0) {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+
+    </script>
+    
+</body>
+</html>
+

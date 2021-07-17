@@ -1,0 +1,80 @@
+﻿@using DocAndDine.Models;
+@{
+    ViewBag.Title = "ContactUs";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main_contactus.css" />
+    <!-- FontAwesome -->
+    <link href="~/Content/main_contactus.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>ContactUs</title>
+</head>
+<body style="       ">
+    <div id="bgImage"></div>
+    <!-- =====================Contact section=============================== -->
+    <section class="contact">
+
+        <div class="row">
+            <div id="containerC">
+
+                <h1>Contact Us</h1>
+                <form action="ContactUs" method="POST" enctype="multipart/form-data">
+
+                    <div class="formText">
+
+                        <label> <i class="fa fa-envelope" aria-hidden="true"></i>Email : </label>
+                        <input class="email" type="email" name="input_mail" placeholder="Enter your Email">
+                    </div>
+                    <div class="formText">
+                        <label><i class="fa fa-phone"></i> Phone no : </label>
+                        <input class="phone" type="text" name="input_phone" placeholder="Enter your Phone No:">
+                    </div>
+                    <div class="formText">
+                        <label>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            Message :
+                        </label>
+                        <textarea class="message" name="input_msg" cols="30" rows="10" placeholder="Enter your Message"></textarea>
+                    </div>
+                    <input class="submit-btn" name="submit_button" type="submit" value="SUBMIT">
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <center>
+        <script type="text/javascript">
+    $(document).ready(function () {
+
+        var msg6 = '@TempData["message"]';
+        var msg4 = '@TempData["email"]';
+        var msg5 = '@TempData["phoneNo"]';
+      
+        if (msg4 == '4') {
+            alert("Please enter valid email.");
+        }
+        else if (msg5 == '5') {
+            alert("Please enter valid phone number.");
+        }
+        else if (msg6 == '6') {
+            alert("Please enter any message.");
+        }
+
+
+    });
+        </script>
+
+    </center>
+</body>
+</html>

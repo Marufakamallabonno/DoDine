@@ -1,0 +1,75 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "UserProfile";
+    if (Model.Rows.Count == 0)
+    {
+        Response.Redirect(Url.Action("Login", "Home"));
+    }
+}
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Styles/_Layout.css" rel="stylesheet" />
+
+    <link href="~/Content/userProfile.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+
+    <div class="profile-main">
+        <div class="profile-pic">
+           
+                <img src="~/Content/Images/admin.png" />
+           
+
+            <h1>@Model.Rows[0][1]</h1>
+
+        </div>
+
+        <hr class="borderHr">
+        <div class="InformationHeader">
+            <h2>Information</h2>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <i class="far fa-user" id="iconss"></i> <label for="FullName">Full Name</label>
+
+                <input type="text" class="form-control cu-form-control" id="HomeChefName" placeholder="@Model.Rows[0][1]" readonly="" disabled="" value="">
+
+
+
+            </div>
+
+            <i class="far fa-envelope-open" id="iconss"></i><label for="number">Email</label>
+            <input type="text" class="form-control cu-form-control" id="email" placeholder="@Model.Rows[0][2]" readonly="" disabled="" value="">
+            <i class="fas fa-phone" id="iconss"></i><label for="number">Phone Number</label>
+            <input type="text" class="form-control cu-form-control" id="number" placeholder="@Model.Rows[0][4]" readonly="" disabled="" value="">
+
+        </div>
+
+
+        <br>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+

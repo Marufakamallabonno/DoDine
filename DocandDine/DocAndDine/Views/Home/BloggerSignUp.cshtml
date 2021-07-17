@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "BloggerSignUp";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <link href="~/Content/login.css" rel="stylesheet" />
+</head>
+
+<body style="background-image:url(../Content/Images/mid-bg6.jpg);">
+
+    <div class="row">
+        <div id="container">
+            <h1>GIVE ADDITIONAL INFORMATION</h1>
+            <form action="BloggerSignup" method="POST" nctype="multipart/form-data">
+                <div class="formText">
+                    <label> Location:</label>
+                    <input type="text" name="LocationInput" class="name" placeholder="Enter Your Location">
+
+               
+                </div>
+                <div class="formText">
+                    <label> Age: </label>
+                    <input type="text" name="AgeInput" class="Email" placeholder="Enter you age ">
+                </div>
+                <div class="formText">
+                    <label> Years of Blogging:</label>
+                    <input type="text" name="YearsofBloggingInput" class="password" placeholder="Enter Your Years of Blogging">
+                </div>
+                <div class="formText">
+                    <label> Education:</label>
+                    <input type="text" name="EducationInput" class="Passsword" placeholder="Enter Your Educational Status">
+                </div>
+                <div class="formText">
+                    <label> Savory or Sweet:</label>
+                    <input type="text" name="SavoryorSweetInput" class="phoneno" placeholder="Enter That You Like Savory or Sweet">
+                </div>
+                <div class="formText">
+                    <label> Your Story:</label>
+                    <textarea class="YourStory" name="StoryInput" type="text" placeholder="Add Your Story"></textarea>
+
+                </div>
+                <button class="create-btn" name="create_btn">Sign Up</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+

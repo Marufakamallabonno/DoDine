@@ -1,0 +1,198 @@
+﻿body {
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Shink Font by Rifki (7NTypes)';
+    src: url('../fonts/Shink Font by Rifki (7NTypes).otf') format('opentype');
+}
+
+.RecipesHeader h2 {
+    text-align: center;
+    margin-left: 40px;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'Shink Font by Rifki (7NTypes)';
+    
+}
+
+.RecipeSearch {
+    background-image: url(../Content/Images/mid-bg3.jpg);
+    height: 25.75rem;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    align-content: center;
+    text-align: left;
+    width: 100%;
+
+}
+
+#main-search {
+    padding: 50px 0;
+    align-content: center;
+    margin-left: 300px;
+}
+
+.search-label {
+    color: black;
+    margin-top: 50px;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: bold;
+    font-stretch: normal;
+    font-size: 2.6rem;
+    line-height: 2.875rem;
+    font-family: "Source Serif Pro", serif;
+}
+
+.search-label2 {
+    color: black;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: bold;
+    font-stretch: normal;
+    font-size: 2.0rem;
+    line-height: 2.875rem;
+    font-family: "Source Serif Pro", serif;
+}
+
+.search-input {
+    border: 0;
+    color: black;
+    background-image: none;
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    width: 550px;
+    box-sizing: border-box;
+    height: 50px;
+    background-color: rgba(0,0,0,0.3);
+    border: solid;
+    border-color: lightgray;
+}
+
+.submit-btn {
+    display: block;
+    background-color: darkorange;
+    padding: 10px;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 30px;
+    border-radius: 5px;
+    margin-top: -5px;
+}
+
+.IncludingIng {
+    border: 0;
+    color: black;
+    background-image: none;
+    margin-left: 0px;
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    width: 250px;
+    box-sizing: border-box;
+    height: 50px;
+    background-color: rgba(0,0,0,0.3);
+    border: solid;
+    border-color: lightgray;
+}
+
+.add-btn {
+    display: block;
+    background-color: darkorange;
+    padding: 10px;
+    width: 60px;
+    height: 50px;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 15px;
+    border-radius: 5px;
+    margin-top: -3px;
+    margin-right: 15px;
+}
+
+.recipeRow {
+    background-color: black;
+    width: 960px;
+    height: 250px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+.recipeImage img {
+    border: dashed;
+    border-color: darkorange;
+    float: left;
+    background-repeat: no-repeat;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+    .recipeImage img:hover {
+        display: block;
+        -ms-transform: scale(1.05); /* IE 9 */
+        -webkit-transform: scale(1.05); /* Safari 3-8 */
+        transform: scale(1.05);
+    }
+
+.RecipeInfo div {
+    padding: 0px;
+    text-align: center;
+}
+
+.RecipeInfo p {
+    color: black;
+    margin-left: 15px;
+    text-align: center;
+}
+
+.recipename h4 {
+    font-size: 35px;
+    color: darkorange;
+}
+
+    .recipename h4:hover {
+        cursor: pointer;
+        color: deepskyblue;
+    }
+
+.recipeWriterName a {
+    font-size: 20px;
+}
+
+    .recipeWriterName a:hover {
+        color: darkorange;
+    }
+
+
+.ViewDetailsButton {
+    background-color: white;
+    width: 260px;
+    height: 50px;
+    font-size: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 150px;
+    margin-top: 0px;
+    color: darkorange;
+    border-radius: 20px;
+}
+
+    .ViewDetailsButton:hover {
+        background-color: darkorange;
+        color: white;
+    }

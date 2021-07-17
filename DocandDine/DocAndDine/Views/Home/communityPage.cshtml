@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "communityPage";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Open+Sans|Pacifico&display=swap" rel="stylesheet">
+
+    <link href="~/Content/blog.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h1> Welcome to the bolgger's community</h1>
+        <div class="row" id="showcommunity">
+            <div class="container1" id="joined">
+                
+                <a href="@Url.Action("leaveCommunity", "Home")" id="logout" class="leave">Leave</a>
+                <h6 style="font-style:italic;color:#9f9d9d;">* You can leave the community whenever You want!</h6>
+            </div>
+
+        </div>
+        <div class="row" id="showcommunity">
+            <div class="comments">
+
+                <h3 class="commentsHeader"><i class="fa fa-comment"></i> Write here:</h3>
+
+                <form method="post" action="communityPage" id="commentBlogsection">
+                    <div class="CommentForm">
+                        <textarea style="width:100%" class="AddComment" name="comment_add" type="text" placeholder="Add a new Comment.."></textarea>
+
+                    </div>
+                    <div class="SubmitComment">
+                        <input type="submit" value="Submit" class="joininput">
+                    </div>
+                </form>
+
+                
+                    @for (int i = 0; i < Model.Rows.Count; i++)
+                    {
+                        <div class="commentShow">
+                            <h6 class="comName">@Model.Rows[i][4] </h6>
+                            <p class="comPara">@Model.Rows[i][2]</p>
+
+
+                        </div>
+                    }
+                
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

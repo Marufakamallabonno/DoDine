@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <link href="~/Content/login2.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="main">
+        <form action="Login" method="POST" enctype="multipart/form-data">
+            <table border="0" cellspacing="10">
+                <tr>
+                    <td>
+                        <div id="title">LOGIN</div>
+                        <hr size="1" width="100px" color="black" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="email" placeholder="USER MAIL" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="pass" placeholder="PASSWORD" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <div id="frt">FORGOT PASSWORD</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="submit" value="LOGIN" id="signInBtn" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div id="signUpMsg">DON'T HAVE AN ACCOUNT <a href="#" id="flipToSignUp">SIGN UP</a></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+
+

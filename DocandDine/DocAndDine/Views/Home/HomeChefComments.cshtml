@@ -1,0 +1,65 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "HomeChefComments";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Styles/_Layout.css" rel="stylesheet" />
+    <link href="~/Content/HomeChefProfile.css" rel="stylesheet" />
+    <link href="~/Content/HomeChefComm.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="profile-main">
+        <div class="InformationHeader" style="margin-top:3%;">
+            <h2>Your Food Items</h2>
+        </div>
+        <br>
+        <section>
+
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="3">
+                    <thead>
+                        <tr class="head1">
+                            <th id="item1">Name</th>
+                            <th>Option</th>
+
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            @for (int i = 0; i < Model.Rows.Count; i++)
+            {
+                <div class="data3">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td>@Model.Rows[i][9]</td>
+                                <td><button class="DeleteHomeChefButton" onclick="location.href='@Url.Action("DeleteHomeFood", "Home", new RouteValueDictionary(new { dId = Model.Rows[i][7] }))'">DELETE</button></td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </section>
+        <br>
+        <div class="container">
+            <div class="col-md-12">
+                <button class="ViewDetailsButton" onclick="location.href='@Url.Action("ViewHomeChefClick", "Home",new RouteValueDictionary(new { id = Model.Rows[0][0] }))'">Prev</button>
+            </div>
+        </div>
+        <br>
+
+
+    </div>
+
+</body>
+</html>

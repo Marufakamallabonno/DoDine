@@ -1,0 +1,98 @@
+
+html, body {
+    background-image: url('Images/bg1(1).jpg');
+
+    background-repeat: no-repeat;
+}
+
+#bgImage {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    min-height: 100%;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#containerC {
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px #808080;
+    font-family: "Montserrat",sans-sarif;
+    width: 600px;
+    margin: 10% auto;
+    background: #f7f7f7;
+    margin-left: 450px;
+    padding: 50px;
+}
+
+
+
+.formText {
+    border: 1px solid gray;
+    margin: 8px 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+    .formText label {
+        display: block;
+        text-align: left;
+        color: #de7e3d;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .formText input, .formText textarea {
+        width: 100%;
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 18px;
+        margin-top: 6px;
+        height:30%;
+    }
+
+h1 {
+    background: #de7e3d;
+    color: white;
+    margin: 0px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: 8px;
+}
+
+label {
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+}
+
+.submit-btn, .create-btn {
+    display: block;
+    background: #de7e3d;
+    padding: 14px 0;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    #container {
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 20px #808080;
+        font-family: "Montserrat",sans-sarif;
+        width: 600px;
+        margin: 10% auto;
+        background: #f7f7f7;
+        margin-left: 200px;
+        padding: 50px;
+    }
+}

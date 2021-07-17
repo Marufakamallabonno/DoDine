@@ -1,0 +1,186 @@
+﻿body {
+}
+@font-face {
+    font-family: 'Shink Font by Rifki (7NTypes)';
+    src: url('../fonts/Shink Font by Rifki (7NTypes).otf') format('opentype');
+}
+
+.RecipeIntro {
+    border: solid;
+    border-color: darkorange;
+    border-radius: 20px;
+    margin-top: 80px;
+    padding: 10px;
+}
+
+.RecipeTitle h2 {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: "Pacifico", cursive;
+}
+
+.recipeWriterName h6 {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+.Rating {
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 65px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+.Date {
+    text-align: right;
+    margin-top: 5px;
+    margin-left: 380px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+.RecipePicture img {
+    width: 700px;
+    height: 400px;
+    margin-top: 10px;
+    align-content: center;
+    padding: 10px;
+    margin-left: 150px;
+}
+
+.extraInfo {
+    width: 290px;
+    margin-left: 350px;
+    padding: 5px;
+    border: dashed;
+    border-color: darkorange;
+}
+
+.MakingTime, .Servings {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.IngHeader h3 {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 45px;
+    color: darkorange;
+}
+
+.RcpHeader h3 {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 45px;
+    color: darkorange;
+}
+
+.RcpInstruction {
+    text-align: center;
+}
+
+    .RcpInstruction p {
+        color: black;
+        text-align: justify;
+    }
+
+.commentsHeader {
+    margin-top: 20px;
+    color: darkorange;
+}
+
+.comments {
+    margin-left: 80px;
+    color: white;
+}
+
+.AddComment {
+    width: 500px;
+    height: 100px;
+}
+
+input[type=submit] {
+    background-color: white;
+    color: darkorange;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    border: inset;
+    border-color: darkorange;
+    margin-left: 400px;
+}
+
+    input[type=submit]:hover {
+        background-color: darkorange;
+        color: white;
+    }
+
+.commentShow {
+    background-color: lightgoldenrodyellow;
+    width: 80%;
+    margin-top: 20px;
+    color: black;
+}
+
+.hr {
+    border-color: white;
+    color: white;
+}
+.rate {
+    height: 46px;
+    padding: 0 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+
+.rateButton {
+    background-color: darkorange;
+    color: white;
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 2px;
+}

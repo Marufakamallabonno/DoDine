@@ -1,0 +1,156 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    font-size: 17px;
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+    .container img {
+        vertical-align: middle;
+        border-radius: 30px;
+    }
+
+    .container .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+    }
+
+#contents {
+    display: inline;
+    float: right;
+    padding: 10px;
+    display: block;
+    color: #9f9d9d;
+}
+
+.container1 {
+    background: #f8f5e6;
+    width: 80%;
+    border-radius: 40px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.iput-group {
+    width: 300px;
+    padding: 10px;
+}
+
+.search {
+    padding-left: 10px;
+    padding-top: 20px;
+    margin-left: 10px;
+    margin-bottom:10px;
+}
+
+.searchTerm {
+    width: 160%;
+    border: 3px solid #FC6;
+    height: 60px;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+    color: #FC6600;
+}
+
+    .searchTerm:focus {
+        color: black;
+    }
+
+.submit-btn {
+    display: block;
+    background-color: #FC6;
+    padding: 5px;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 10px;
+    height: 60px;
+    margin-left: 130px;
+}
+
+    .submit-btn:hover {
+        color: #FC6600;
+        background-color: #000;
+    }
+
+/*comment section*/
+.leave{
+    border:double;
+    padding:2px;
+    
+}
+.commentsHeader {
+    margin-top: 20px;
+    color: darkorange;
+}
+
+.comments {
+    margin-left: 0px;
+    color: white;
+}
+
+.AddComment {
+    width: 100%;
+    height: 100px;
+}
+
+.joininput {
+    background-color: white;
+    color: darkorange;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    border: inset;
+    border-color: darkorange;
+    margin-left: 0px;
+}
+
+    input[type=submit]:hover {
+        background-color: darkorange;
+        color: white;
+    }
+
+.commentShow {
+    background-color: lightgoldenrodyellow;
+    width: 700px;
+    margin-top: 20px;
+    color: black;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        margin: 20px;
+    }
+}

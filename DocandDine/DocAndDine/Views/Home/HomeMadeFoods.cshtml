@@ -1,0 +1,206 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "HomeMadeFoods";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Styles/_Layout.css" rel="stylesheet" />
+    <link href="~/Content/HomeMadeFoods.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <div class="HomeMadeHeader">
+        <h2>Home Made Foods</h2>
+    </div>
+
+    <div class="row" style="background-image: url('../../Content/Images/FoodBlog2.jpg'); ">
+        <div id="main-search" class="content-gray hidden-sm hidden-xs">
+            <div class="container">
+                <form method="POST" action="HomeFoodSearch">
+                    <div class="main-search-fields">
+                        <p class="searchlabel" id="searchIt" style="">Search Term:</p>
+                        <div class="row">
+
+                            <div class="search">
+                                <input type="text" class="searchTerm"  name ="keyword" placeholder="What are you looking for?">
+                                <input class="submit-btn" name="submit_button" type="submit" value="SEARCH">
+
+                            </div>
+
+                            <!--<input class="search-input" name="keyword" autocomplete="off" type="search">-->
+                        </div>
+                        <div class="row">
+              
+                                <div class="selects-container">
+                                    <p> Available: </p>
+                                    <select class="selects" name="Availability">
+                                        <option value="all">All</option>
+                                        <option Value="yes">yes</option>
+                                        <option Value="no">no</option>
+
+
+                                    </select>
+                                </div>
+             
+                         
+                                    <div class="selects-container">
+                                        <p> Location: </p>
+                                        <select class="selects" name="HFlocation">
+                                            <option value="all">All</option>
+                                            <option Value="Dhanmondi">Dhanmondi</option>
+                                            <option Value="Khilgaon">Khilgaon</option>
+                                            <option Value="Mirpur">Mirpur</option>
+                                            <option Value="Uttara">Uttara</option>
+                                            <option Value="Basundhara">Basundhara</option>
+                                            <option Value="BaileyRoad">BaileyRoad</option>
+                                            <option Value="Rampura">Rampura</option>
+                                            <option Value="PuranDhaka">PuranDhaka</option>
+                                            <option Value="Mohammadpur">Mohammadpur</option>
+                                            <option Value="Green road">Green road</option>
+                                            <option Value="Shabujbagh">Shabujbagh</option>
+                                            <option Value="Mokhbazar">Mokhbazar</option>
+                                        </select>
+                                    </div>
+                     
+
+                                <div class="selects-container">
+                                    <p> Ratings: </p>
+                                    <select class="selects" name="HfRating">
+                                        <option Value="0">All</option>
+                                        <option Value="4">4+</option>
+                                        <option Value="3">3+</option>
+                                        <option Value="2">2+</option>
+                                        <option Value="1">1+</option>
+
+                                    </select>
+                                </div>
+
+
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="HomeFoodMadeHeader">
+        <h2>See Food items</h2>
+    </div>
+
+    <div class="row">
+        <div class="PostHomeMadeFood" id="postHomeMadeFood">
+            <a class="PostHomeMadeFoodButton" data-toggle="modal" data-target="#postModal">Post A Food item</a>
+            <div class="modal fade" id="postModal">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="ModalBody">
+                        <div class="modal-header">
+                            <a href="#" data-dismiss="modal" class="close"><span>&times;</span></a>
+                            <h3 class="modal-title">Post A Food item</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form action="HomeMadeFoodPost" method="POST" enctype="multipart/form-data">
+                                <div class="formText">
+                                    <label>Item name : </label>
+                                    <input type="text" name="homemadeFoodName" class="homemadeFoodName" placeholder="Enter the name of your food item">
+                                </div>
+                                <div class="formText">
+                                    <label>Price :</label>
+                                    <input type="text" name="homemadeFoodPrice" class="homemadeFoodPrice" placeholder="Enter a specific price in BDT">
+                                </div>
+
+                                <div class="formText">
+                                    <label><i class="fas fa-upload"></i> Food item Picture:</label>
+                                    <input type="file" name="homemadeFoodPic" accept="image/*">
+                                </div>
+                                <div class="formText" id="status">
+                                    <label>Availability Status</label>
+                                    <select class="selects" name="availabilityStatus" style:"color:white;">
+                                        <option value="YES">YES</option>
+                                        <option value="NO">NO</option>
+
+                                    </select>
+
+                                </div>
+                                <div class="formText">
+                                    <label>Date</label>
+                                    <input type="text" name="date" class="HomeFoodate" placeholder="Enter an expiry date ex:29th August">
+                                </div>
+
+                                <button class="btn btn-primary">Post</button>
+                                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var x = document.getElementById("postHomeMadeFood");
+          if ('@Session["homeChefActive"]'== 0) {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+
+    </script>
+
+
+
+
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+
+        @: <div class="row">
+            @:   <div class="container" id="pictureBlock">
+
+                <div class="col-sm-6 col-sm-6 mt-5" id="pictureLeft">
+                    <div id="thumbnail">
+                        @{
+                            var name = Path.GetFileName(Convert.ToString(Model.Rows[i][4]));
+                        }
+                        <img id="FoodImage" src="~/Content/Images/@name" />
+                    </div>
+                </div>
+                @: <div class="col-md-6 col-sm-6" id="TextRight">
+
+                    @:   <div class="text-holder">
+                <h2 class="title">@Model.Rows[i][2]</h2>
+                        <a href="@Url.Action("ViewHomeChefClick", "Home",new RouteValueDictionary(new { id = Model.Rows[i][1] }))"><h3 id="chef-name">@Model.Rows[i][15]</h3></a>
+                        <div id="firstDiv">
+                            <div id="left">Price</div>
+                            <div id="right">@Model.Rows[i][3] BDT</div>
+                        </div>
+                        <br>
+                        <div>
+                            <div id="lefta">Availability</div>
+                            <div id="righta">@Model.Rows[i][5]</div>
+                        </div>
+                       <hr />
+                         <a href="https://pathao.com/food/" class="button1">Order Now </a>
+
+                    @: </div>
+                @: </div>
+            @: </div>
+
+        @:</div>
+        <br>
+
+    }
+
+   
+</body>
+</html>
+
+
+
+

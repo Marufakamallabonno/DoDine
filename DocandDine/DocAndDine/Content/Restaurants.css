@@ -1,0 +1,224 @@
+﻿body {
+    overflow-x: hidden;
+}
+
+.RestaurantHeader h2 {
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 40px;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+#main-search {
+    padding: 50px 0;
+    align-content: center;
+    margin-left: 150px;
+}
+
+.content-dark {
+    background: black;
+    width: 100px;
+}
+
+#main-search-fields {
+    width: 580px;
+    display: inline-block;
+}
+
+.search-label {
+    color: black;
+    font-size: 30px;
+}
+
+.search-input {
+    border: 0;
+    color: black;
+    background-image: none;
+    -webkit-border-radius: 3px;
+    padding: 10px;
+    width: 540px;
+    box-sizing: border-box;
+    height: 40px;
+    background-color: lightgray;
+}
+
+.selects-container p {
+    display: inline-block;
+    width: 130px;
+    margin-right: 0px;
+    margin-top: 15px;
+    color: black;
+    font-size: 20px;
+    float: left;
+}
+
+.selects-container select {
+    display: inline-block;
+    width: 200px;
+    margin-right: 10px;
+    margin-top: 15px;
+    color: black;
+    font-size: 20px;
+    float: left;
+}
+
+.selects {
+    background-color: lightgray;
+    color: #cecece;
+    font-size: 15px;
+    width: 100%;
+    margin-left: -20px;
+}
+
+
+.submit-btn {
+    display: block;
+    background-color: darkorange;
+    padding: 10px;
+    color: black;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 30px;
+    border-radius: 5px;
+    margin-top: -5px;
+}
+
+.FoodTitle {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    margin-bottom: 30px;
+}
+
+.HomeFoodList {
+    position: center;
+}
+
+.FoodBlock {
+    width: 260px;
+    margin-left: 30px;
+}
+
+.FoodBlock2 {
+    width: 260px;
+    margin-left: 15px;
+}
+
+
+.FoodImage img {
+    border: dashed;
+    border-color: darkorange;
+    transition: transform .2s;
+}
+
+.FoodImage2 img {
+    border: dashed;
+    border-color: darkorange;
+    transition: transform .2s;
+}
+
+.tag {
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 45px;
+    line-height: 24px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+.tag2 {
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 32px;
+    line-height: 24px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+.multi-tag {
+    height: 20px;
+    background-color: darkorange;
+    padding: 0 16px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    max-width: 200px;
+    border-radius: 0 10px 10px 0;
+    padding-bottom: 23px;
+    opacity: 1;
+}
+
+.FoodInfo {
+    text-align: center;
+    margin-left: -10px;
+}
+
+.FoodTitle h5 {
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: 8px;
+}
+
+.ChefTitle h6 {
+    color: dimgray;
+    margin-top: -15px;
+    margin-left: 8px;
+}
+
+.ViewDetailsButton {
+    background-color: white;
+    width: 260px;
+    height: 50px;
+    font-size: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 8px;
+    color: darkorange;
+    border-radius: 20px;
+}
+
+
+.ViewDetailsButton:hover {
+    background-color: darkorange;
+    color: white;
+}

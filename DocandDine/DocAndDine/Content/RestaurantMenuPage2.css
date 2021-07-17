@@ -1,0 +1,317 @@
+﻿body {
+}
+
+@import url('https://fonts.googleapis.com/css?family=Arapey&display=swap');
+
+@font-face {
+    font-family: 'Shink Font by Rifki (7NTypes)';
+    src: url('../fonts/Shink Font by Rifki (7NTypes).otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Arapey-RegularItalic';
+    src: url('../fonts/Arapey-RegularItalic.ttf') format('truetype');
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 15px #000;
+    }
+}
+
+/**restaurant pictire*/
+.RestaurantPicture {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: #000;
+    border-radius: 6px;
+    height: 500px;
+    max-width: 100%;
+}
+
+.RestaurantPicture-bg {
+    background-position: 0 50%;
+    background-size: 100% auto;
+    height: 100%;
+    width: 100%;
+}
+
+.RestaurantPicture-block {
+    display: block !important;
+}
+
+.centered {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    font-size: 70px;
+    font-weight: bold;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    font-family: 'Arapey-RegularItalic';
+    transform: translate(-50%, -50%);
+}
+
+.MenuTitle h2 {
+    background: #f5a947;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'Shink Font by Rifki (7NTypes)';
+}
+
+/* MENU STYLING */
+ul.selecton {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+    ul.selecton li:hover a, ul.selecton li a.active {
+        border-radius: 3px 3px 0 0;
+        background: #FC6600;
+        color: #FFFFFF;
+    }
+
+.brdr-b-primary {
+    border-bottom: 3px solid #FC6600;
+}
+
+.mb-70 {
+    margin-bottom: 50px !important;
+}
+/*list er gula styling */
+.Menubar1 {
+    list-style: none;
+    display: inline-block;
+    line-height: 1.6;
+    font-size: .9em;
+}
+
+    .Menubar1 a {
+        padding: 15px 30px;
+    }
+
+    .Menubar1 a, button {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+        line-height: 1.3;
+        -webkit-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+
+/* MENU STYLING */
+
+
+.FoodBlock {
+    width: 260px;
+}
+
+.FoodBlock2 {
+    width: 260px;
+    margin-left: 15px;
+}
+
+
+.FoodImage img {
+    margin-bottom: 10px;
+    border: 3px solid black;
+    transition: transform .2s;
+}
+
+.FoodImage2 img {
+    border: dashed;
+    border-color: darkorange;
+    transition: transform .2s;
+}
+
+.tag {
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    line-height: 24px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+.tag2 {
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 32px;
+    line-height: 24px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+.multi-tag {
+    height: 20px;
+    background-color: darkorange;
+    padding: 0 16px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    max-width: 200px;
+    border-radius: 0 10px 10px 0;
+    padding-bottom: 23px;
+    opacity: 1;
+}
+
+.FoodInfo {
+    text-align: center;
+}
+
+.FoodTitle h5 {
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: 8px;
+}
+
+.ChefTitle h6 {
+    color: dimgray;
+    margin-top: -15px;
+    margin-left: 8px;
+}
+
+.ViewDetailsButton {
+    background-color: white;
+    width: 260px;
+    height: 50px;
+    font-size: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 8px;
+    color: darkorange;
+    border-radius: 20px;
+    padding: 7px 40px 7px 40px;
+    border: groove;
+}
+
+
+
+    .ViewDetailsButton:hover {
+        background-color: darkorange;
+        color: white;
+    }
+
+.PostMenuButton {
+    margin-left: 550px;
+    color: white;
+    background-color: darkorange;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 1200px;
+    cursor: pointer;
+    border-color:white;
+}
+
+.formText {
+    border: 1px solid gray;
+    margin: 8px 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+    .formText label {
+        display: block;
+        text-align: left;
+        color: #de7e3d;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    .formText input, .formText textarea {
+        width: 100%;
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 18px;
+        margin-top: 6px;
+    }
+
+.rate {
+    height: 46px;
+    padding: 0 10px;
+    margin-left: 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+
+.rateButton {
+    background-color: darkorange;
+    color: white;
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 2px;
+}

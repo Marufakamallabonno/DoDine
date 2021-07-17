@@ -1,0 +1,116 @@
+﻿@using DocAndDine.Models;
+@{
+    ViewBag.Title = "SignUp";
+}
+@model SignUpUser
+@Html.ValidationSummary()
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/Signup.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+</head>
+
+<body style="background-image:url(../Content/Images/mid-bg6.jpg);">
+
+
+    <div class="row">
+        <div id="container">
+            <h1>Sign Up</h1>
+            <form action="Index" method="POST" enctype="multipart/form-data">
+                <div class="formText">
+                    <label> <i class="fas fa-user"></i> Username: *(3 to 20 characters)</label>
+                    <input type="text" name="UsernameInput" class="name" placeholder="Enter Your username">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-envelope"></i> Email: *</label>
+                    <input type="text" name="EmailInput" class="Email" placeholder="Enter Your email">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-lock"></i> Password: (atleast 3 characters) *</label>
+                    <input type="password" name="passwordInput" class="password" placeholder="Enter Your Password">
+
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-lock"></i> Re-enter password: *</label>
+                    <input type="password" name="Re-enterPassswordInput" class="Passsword" placeholder="Re-enter Password">
+                    <!-- <input data-val="true" data-val-required="Password is Required." id="Password" name="passwordInput" type="password" /><span class="field-validation-valid error" data-valmsg-for="Password" data-valmsg-replace="true"></span>    <br />
+                        <input class="input-validation-error" data-val="true" data-val-equalto="Password Must Match" data-val-equalto-other="*.Password" data-val-required="Confirmation Password is Required" id="rePassword" name="Re-enterPassswordInput" type="password" placeholder="Re-enter Password" />
+                    <span class="field-validation-error error" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true">Password Must Match</span>
+
+
+                     <input type="password" name="Re-enterPassswordInput" class="Passsword" placeholder="Re-enter Password">!-->
+
+
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-phone"></i> Phone No: *</label>
+                    <input type="text" name="phoneNoInput" class="phoneno" placeholder="Enter Your Phone No">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-upload"></i> Profile Picture:</label>
+                    <input type="file" name="pic" accept="image/*">
+                </div>
+                <div class="formText">
+                    <label><i class="fa fa-angle-down"></i> Sign up as:</label>
+                    <select class="selects" name="userChoice">
+                        <option value="user">User</option>
+                        <option value="homechef">Homechef</option>
+                        <option Value="recipeWriter">RecipeWriter</option>
+                        <option Value="blogger">Blogger</option>
+                        <option Value="premiumUser">Premium User</option>
+                    </select>
+                </div>
+                <button class="next-btn" name="next_btn">Next</button>
+            </form>
+
+        </div>
+    </div>
+    <center>
+        <script type="text/javascript">
+    $(document).ready(function () {
+
+        var msg = '@TempData["data"]';
+        var msg2 = '@TempData["message"]';
+        var msg4 = '@TempData["email"]';
+        var msg3 = '@TempData["pass"]';
+        var msg5 = '@TempData["phoneNo"]';
+        if (msg == '1') {
+            alert("Please Enter valid user name.Name must not exceed 20 character");
+        }
+        else if (msg2 == '2') {
+            alert("The password you have entered doesnt match. Or incorrect Password.");
+        }
+        else if (msg3 == '3') {
+            alert("Enter the Password.");
+        }
+
+        else if (msg4 == '4') {
+            alert("Please enter valid email.");
+        }
+        else if (msg5 == '5') {
+            alert("Please enter valid phone number.");
+        }
+
+
+    });
+        </script>
+
+    </center>
+</body>
+
+</html>
+
+
+
+
+

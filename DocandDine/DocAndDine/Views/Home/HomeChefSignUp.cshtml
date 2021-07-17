@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "HomeChefSignUp";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+    <link href="~/Content/login.css" rel="stylesheet" />
+</head>
+
+
+<body style="background-image:url(../Content/Images/mid-bg6.jpg);">
+    <div class="row">
+        <div id="container">
+            <h1>Give Additional Information</h1>
+            <form action="HomeChefSignup" method="POST" nctype="multipart/form-data">
+                <div class="formText">
+                    <label>
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
+
+                        Facebook Link:
+                    </label>
+                    <input type="text" name="HomeChefFbLinkInput" class="FbLink" placeholder="Enter Your Facebook Link">
+                </div>
+                <div class="formText">
+
+
+                    <label>
+                        <i class="fab fa-instagram" aria-hidden="true"></i> Instagram Link:
+                    </label>
+                    <input type="text" name="HomeChefInstaLinkInput" class="InstaLink" placeholder="Enter Your Instagram Link">
+                </div>
+                <div class="formText">
+                    <label><i class="fab fa-twitter"></i> Twitter Link:</label>
+                    <input type="text" name="HomeChefTwitterLinkInput" class="TwitterLink" placeholder="Enter Your Twitter Link">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-location-arrow"></i> Address:</label>
+                    <input type="text" name="HomeChefAddressInput" class="HomeChefAddress" placeholder="Enter your Valid Address with details">
+                </div>
+                <div class="formText">
+                    <label> <i class="fas fa-thumbtack"></i> Area:</label>
+                    <input type="text" name="HomeChefAreaInput" class="HomeChefArea" placeholder="Enter your Area(Ex - Banani,Dhanmondi )">
+
+                </div>
+
+                <button class="create-btn" name="create_btn">Submit</button>
+
+
+            </form>
+
+        </div>
+    </div>
+    <center>
+        <script type="text/javascript">
+    $(document).ready(function () {
+
+        var msg = '@TempData["HomeChefArea"]';
+       
+        if (msg == '1') {
+            alert("Enter a your current Area ");
+        }
+       
+
+    });
+        </script>
+
+    </center>
+</body>
+
+</html>

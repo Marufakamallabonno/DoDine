@@ -1,0 +1,112 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Recipes";
+}
+<
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link type="text/css" href="~/Content/Recipes.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Styles/_Layout.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="RecipesHeader">
+        <h2>Our Recipes</h2>
+    </div>
+
+    <div class="RecipeSearch">
+        <div id="main-search" class="content-gray hidden-sm hidden-xs">
+            <p class="search-label term">Search A Recipe: </p>
+            <form id="recipeSearch" method="post" action="RecipeSearch"></form>
+            <form id="ingAdd" method="post" action="IngredientAdd"></form>
+            <form id="ingDelete" method="post" action="IngredientDelete"></form>
+            <div class="row">
+                <input class="search-input" name="keyword" autocomplete="off" type="search" placeholder="Type to search" form="recipeSearch">
+                <input class="submit-btn" name="submit_button" type="submit" value="SEARCH"  form="recipeSearch">
+            </div>
+
+            <p class="search-label2 term">Ingredient search: </p>
+            <div class="row">
+                
+                <input class="IncludingIng" name="ingr_add" type="search" placeholder="Include Ingredients(MAX 3)" form="ingAdd" />
+                <input class="add-btn" name="add_button" type="submit" value="+" form="ingAdd"/>
+
+                <input class="IncludingIng" name="ingr_delete" type="search" placeholder="Exclude Ingredients" form="ingDelete" />
+                <input class="add-btn" name="delete_button" type="submit" value="-" form="ingDelete" />
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container">
+
+        @for (int i = 0; i < Model.Rows.Count; i++)
+        {
+            @:<div class="row">
+                @:<div class="recipeRow">
+                    <div class="recipeImage">
+                        @{
+
+                            var name = Path.GetFileName(Convert.ToString(Model.Rows[i][4]));
+                        }
+                        <img src="~/Content/Images/@name" width="380" ; height="230" />
+                    </div>
+                    @:<div class="RecipeInfo">
+                        <div class="recipename">
+                            <h4>@Model.Rows[i][2]</h4>
+                        </div>
+                        @:<div class="RecipeInfo">
+                            @: <div class="recipeWriterName">
+                                <a href="@Url.Action("ViewRecipeWriterClick", "Home",new RouteValueDictionary(new { id = Model.Rows[i][1]}))"><h6>By @Model.Rows[i][21]</h6></a>
+                                <h6 style="font-size:15px;">Rating : @Model.Rows[i][22]</h6>
+                            @: </div>
+                            <p>@Model.Rows[i][9]</p>
+                        @:  </div>
+
+                        
+                        //<button class="ViewDetailsButton" onclick="location.href='@Url.Action("ViewRecipe", "Home")'">View Recipe </button>
+                        <button class="ViewDetailsButton" onclick="location.href='@Url.Action("ViewRecipeClick", "Home",new RouteValueDictionary(new { id = Model.Rows[i][0]}))'">View Recipe </button>
+                    @:</div>
+
+                   
+
+                @: </div>
+            @: </div>
+        }
+
+
+
+
+        <!-- <div class="row">
+            <div class="recipeRow">
+                <div class="recipeImage">
+                    <img src="~/Content/Images/recipe2.jpg" width="380" ; height="230" />
+                </div>
+                <div class="RecipeInfo">
+                    <div class="recipename">
+                        <h4>Three Cup Chicken</h4>
+                    </div>
+                    <div class="recipeWriterName">
+                        <a href="/Home/RecipeWriterProfile"<h6>By Arcas</h6></a>
+                        <h6 style="font-size:15px;">Rating</h6>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy habitant morbi.</p>
+                </div>
+                <button class="ViewDetailsButton" onclick="location.href='@Url.Action("ViewRecipe","Home")'">View Recipe >> </button>
+            </div>
+        </div>-->
+    </div>
+
+
+
+
+</body>
+</html>
+
+
+

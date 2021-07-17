@@ -1,0 +1,68 @@
+﻿@font-face {
+    font-family: 'Shink Font by Rifki (7NTypes)';
+    src: url('../fonts/Shink Font by Rifki (7NTypes).otf') format('opentype');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url('Images/wallpaper-orange.png');
+    background-size: cover;
+    font-family: 'Gudea', sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tbl-header {
+}
+.head1 {
+    background-color: #FFA500;
+
+}
+
+.data3 {
+    height: 50px;
+    overflow-x: auto;
+    margin-top: 5px;
+    border:1px solid rgb(255, 106, 0);
+}
+th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight:bold;
+    font-size: 20px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+td {
+    text-align: left;
+    width: -10px;
+    margin-top: 20px;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 20px;
+    color: #000;
+    padding:0.5%;
+    font-weight: bold;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+#item1 {
+    width: -10px;
+}
+
+.DeleteHomeChefButton {
+    font-weight:bold;
+}

@@ -1,0 +1,168 @@
+﻿@using DocAndDine.Models
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "Blogger";
+    if (Model.Rows.Count == 0)
+    {
+        Response.Redirect(Url.Action("Login", "Home"));
+    }
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Open+Sans|Pacifico&display=swap" rel="stylesheet">
+
+    <link href="~/Content/blogger.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+
+        <div class="blogger_name" style="font-family: 'Pacifico', cursive; font-weight: 400;  font: 36px;">
+
+
+            <h1>Hi, I'm @Model.Rows[0][9]..</h1>
+        </div>
+
+        <div class="blogger_image">
+            @{
+                var name2 = Path.GetFileName(Convert.ToString(Model.Rows[0][13]));
+                <img src="~/Content/Images/@name2" style="width:100%">
+            }
+        </div>
+        <div class="blogger_info">
+            <div id="container">
+
+                <h3 style="font-family: 'Pacifico', cursive; font-weight: 400;  font: 36px;color:black">Quick Info..</h3>
+                <table>
+                    <tr>
+                        <td>Location:</td>
+
+                        <td>@Model.Rows[0][2]</td>
+
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+
+                        <td>@Model.Rows[0][6]</td>
+
+                    </tr>
+                    <tr>
+                        <td>Years Blogging:</td>
+
+                        <td>@Model.Rows[0][4]</td>
+
+                    </tr>
+                    <tr>
+                        <td>Education:</td>
+
+                        <td>@Model.Rows[0][5]</td>
+
+                    </tr>
+                    <tr>
+                        <td>Savory or Sweet:</td>
+
+                        <td>@Model.Rows[0][5]</td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="blogger_story">
+                <h3 style="font-family: 'Pacifico', cursive; font-weight: 400;  font: 36px;color:black">
+                    MY STORY
+                </h3>
+                <p style="color:#373434">
+
+                    @Model.Rows[0][3]
+
+                </p>
+            </div>
+            <div>
+                <h3 style="font-family: 'Pacifico', cursive; font-weight: 400;  font: 36px;color:black">
+                    Want More?
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="~/Content/Images/recipe1.jpeg" style="width:70%">
+                </div>
+                <div class="col-md-3">
+
+                    <img src="~/Content/Images/recipe2.jpg" style="width:70%">
+                </div>
+                <div class="col-md-3">
+                    <img src="~/Content/Images/recipe1.jpeg" style="width:70%">
+                </div>
+                <div class="col-md-3">
+
+                    <img src="~/Content/Images/recipe2.jpg" style="width:70%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!------------------------poppuppost----------------------------->
+    <div class="row">
+        <div class="PostBlog" id="postBlog">
+            <a class="PostBlogButton" data-toggle="modal" data-target="#postModal">Post A New Blog</a>
+            <div class="modal fade" id="postModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a href="#" data-dismiss="modal" class="close"><span>&times;</span></a>
+                            <h3 class="modal-title">Post A New Blog</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form action="Blogpost" method="POST" enctype="multipart/form-data">
+                                <div class="formText">
+                                    <label>Blog name:</label>
+                                    <input type="text" name="BlogNameInput" class="name" placeholder="Enter Your blog name">
+                                </div>
+                                <div class="formText">
+                                    <label>Blog Publish date:</label>
+                                    <input type="text" name="publishDateInput" class="publishdate" placeholder="Enter date">
+                                </div>
+
+                                <div class="formText">
+                                    <label><i class="fas fa-upload"></i> Blog Picture:</label>
+                                    <input type="file" name="blogerpic" accept="image/*">
+                                </div>
+                                <div class="formText">
+                                    <label>Summary:</label>
+                                    <textarea class="process" name="summaryInput" cols="30" rows="10" placeholder="write a summary of your blog"></textarea>
+                                </div>
+                                <div class="formText">
+                                    <label>Description :</label>
+                                    <textarea class="description" name="input_description" cols="30" rows="10" placeholder="write a description of your blog"></textarea>
+                                </div>
+                                <button class="btn btn-primary">Post</button>
+                                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var x = document.getElementById("postBlog");
+          if ('@Session["bloggerActive"]' == 0) {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+
+    </script>
+
+</body>
+</html>
+
+

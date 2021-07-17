@@ -1,0 +1,302 @@
+﻿body {
+
+}
+@font-face {
+    font-family: 'Shink Font by Rifki (7NTypes)';
+    src: url('../fonts/Shink Font by Rifki (7NTypes).otf') format('opentype');
+}
+
+.section-padding2 {
+    padding-top: 130px;
+}
+
+#welcomeArea {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 100px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.align-self-center {
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+}
+
+.welcome-area .welcome-text {
+    padding-right: 50%;
+}
+
+@media (max-width: 575.98px) {
+    .welcome-area, .welcome-text {
+        padding: 0 5%;
+    }
+}
+
+.h3 {
+    font-size: 24px;
+}
+
+.welcome-text h3 {
+    color: #131230;
+    font-family: "Playfair Display",serif;
+    font-size: 36px !important;
+    font-weight: 700;
+}
+
+.welcome-area .style-change {
+    color: #ffb606;
+    font-style: italic;
+    font-family: "Playfair Display",serif;
+    font-size: 36px !important;
+    font-weight: 700;
+}
+
+.pt-3 {
+    padding-top: 1rem !important;
+}
+
+.template-btn {
+    color: #131230;
+    background: #ffb606;
+    font-family: "Roboto",sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    display: inline-block;
+    padding: 12px 30px !important;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all 0.5s;
+}
+
+    .template-btn:hover {
+        background-color: transparent;
+        border-color: black;
+        border: dashed;
+    }
+
+.a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.welcome-text p {
+    display: block;
+    font-size: 15px;
+    font-family: "Roboto",sans-serif;
+}
+
+.pb_md_py_cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .pb_md_py_cover > .container > .row {
+        height: inherit;
+        padding: 6em 0;
+    }
+}
+
+.col-md-9 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.pb_md_py_cover .heading {
+    font-size: 62px;
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: 'Shink Font by Rifki (7NTypes)';
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.pb_md_py_cover .sub-heading {
+    font-size: 20px;
+    color: rgba(255,255,255,.9);
+    max-width: 600px;
+    float: left;
+    margin-left: 120px;
+    font-weight: 400;
+}
+
+.pb_md_py_cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.pb_md_py_cover {
+    height: inherit;
+    text-align: center !important;
+    padding: 6em 0;
+}
+
+.cover-bg-black {
+    position: relative;
+}
+
+.bg-lightGray {
+    background: #fff8f7;
+    padding: 65px 0;
+    padding-left: 130px;
+}
+
+.row no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    position: relative;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+    -webkit-animation-timing-function: ease-out;
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 300px;
+    }
+}
+
+
+.no-gutters > .col, .no-gutters > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.rounded-0 {
+    border-radius: 0 !important;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: calc(.25rem - 1px);
+}
+
+.col-sm img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.offer-card {
+    background-color:black;
+    color: white;
+    text-align: center;
+    height: 70%;
+    width: 80%;
+    padding: 65px 20px;
+    box-shadow: -13px 2px 20px 0px rgba(8,6,89,0.2);
+    margin-left: -100px;
+    margin-top: 100px;
+    border: dotted;
+    border-color: darkorange;
+    border-radius: 10px;
+}
+
+    .offer-card:hover {
+        transform: scale(1.2);
+    }
+
+
+
+
+    .offer-card h3 {
+        font-size: 30px;
+        text-transform: capitalize;
+        color: white;
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+
+
+@media (max-width: 1000px) {
+    h3, .h3 {
+        font-size: 19px;
+    }
+}
+
+.offer-card h2 {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: yellow;
+    margin-bottom: 25px;
+    animation: blinker 1s linear infinite;
+}
+
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.offer-card .button {
+    border: 1px solid #fff;
+}
+
+.button {
+    display: inline-block;
+    background-color: yellow;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 9px 25px;
+    margin-top: 10px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.col-sm {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.button:hover {
+    background-color: white;
+    border: inset;
+    border-color: yellow;
+    color:black;
+}

@@ -1,0 +1,268 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "RecipeWriterProfile";
+    if(Model.Rows.Count == 0)
+    {
+        Response.Redirect(Url.Action("Login", "Home"));
+    }
+
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/RecipeWriterProfile.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Styles/_Layout.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" />
+</head>
+
+<body>
+    <div class="author-header-inner">
+        <div class="userProfile">
+            <a class="userProfile-bg userProfile-block img-responsive" style="background-image: url(../../Content/Images/mid-bg5.jpg);"></a>
+            <div class="container">
+
+                @{
+                    var name = Path.GetFileName(Convert.ToString(Model.Rows[0][5]));
+                }
+                <img alt="" src="../Content/Images/@name" class="userProfile-avatarImg rounded-circle img-responsive">
+
+            </div>
+        </div>
+        <div class="author-header-title-wrapper">
+            <div class="author-header-title">
+
+
+                <h1 class="author-header-name" id="recipeWriterName">@Model.Rows[0][5]</h1>
+
+
+
+                <div class="author-header-author-title">Food Assistant</div>
+            </div>
+            <div class="author-header-content">
+                <p class="author-header-subhead"></p><p>@Model.Rows[0][18]</p>
+            </div>
+
+            <div class="author-header-shares">
+                <div class="author-header-shares-label">Connect: </div>
+
+                <div class="social-button">
+
+
+                    <i class="fab fa-facebook"><a href="@Model.Rows[0][19]"> Facebook</a>  </i>
+                    <i class="fab fa-twitter"> <a href="@Model.Rows[0][21]"> Twitter</a> </i>
+                    <i class="fab fa-instagram"> <a href="@Model.Rows[0][20]"> Instagram </a></i>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------PopUp Post--------------------->
+    <div class="row">
+        <div class="PostRecipe" id="postRecipe">
+            <a class="PostRecipeButton" data-toggle="modal" data-target="#postModal">Post A New Recipe</a>
+            <div class="modal fade" id="postModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a href="#" data-dismiss="modal" class="close"><span>&times;</span></a>
+                            <h3 class="modal-title">Post recipe</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form action="RecipePost" method="POST" enctype="multipart/form-data">
+                                <div class="formText">
+                                    <label>Recipe name:</label>
+                                    <input type="text" name="recipeNameInput" class="name" placeholder="Enter Your recipe name">
+                                </div>
+                                <div class="formText">
+                                    <label>Recipe Publish date:</label>
+                                    <input type="text" name="publishDateInput" class="publishdate" placeholder="Enter date">
+                                </div>
+
+                                <div class="formText">
+                                    <label><i class="fas fa-upload"></i> Recipe Picture:</label>
+                                    <input type="file" name="recipepic" accept="image/*">
+                                </div>
+                                <div class="formText">
+                                    <label>Cooking time:</label>
+                                    <input type="text" name="cookingTimeInput" class="cookingTime" placeholder="Enter cooking time">
+                                </div>
+                                <div class="formText">
+                                    <label>Servings:</label>
+                                    <input type="text" name="servingInput" class="serving" placeholder="Enter no of servings">
+                                </div>
+                                <div class="formText">
+                                    <label>Ingredients:</label>
+                                    <input type="text" name="ingInput" class="ingredients" placeholder="Enter Ingredients">
+
+                                </div>
+                                <div class="formText">
+                                    <label>Process :</label>
+                                    <textarea class="process" name="input_process" cols="30" rows="10" placeholder="Enter your Message"></textarea>
+                                </div>
+                                <div class="formText">
+                                    <label>Description :</label>
+                                    <textarea class="description" name="input_description" cols="30" rows="10" placeholder="Enter your Message"></textarea>
+                                </div>
+                                <button class="btn btn-primary">Post</button>
+                                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var x = document.getElementById("postRecipe");
+          if ('@Session["recipeWriterActive"]' == 0) {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+
+    </script>
+    <!-- <div class="row">
+         <div class="MustReadHeader">
+             <h3>Must Reads</h3><hr />
+         </div>
+     </div>-->
+    <div class="MustReadHeader">
+        <h3>Must Reads</h3><hr />
+    </div>
+
+    <div class="MustReadSection">
+      
+            <div class="article-content">
+                <div class="photo_wrap">
+                    @{
+                        var name2 = Path.GetFileName(Convert.ToString(Model.Rows[0][10]));
+                    }
+                    <img src="~/Content/Images/@name2" />
+                </div>
+                <header class="summary">
+                    <strong class="tag">article</strong>
+                    <h4 class="hed">
+                        <a href="">@Model.Rows[0][8]</a>
+                    </h4>
+                    <p class="dek">@Model.Rows[0][15]</p>
+                </header>
+            </div>
+        </div>
+
+
+        <!--   <div class="article-content">
+            <div class="photo_wrap">
+
+                <img src="~/Content/Images/recipe1.jpeg" />
+            </div>
+            <header class="summary">
+                <strong class="tag">article</strong>
+                <h4 class="hed">
+                    <a href="">Why cooking is a problem for us!</a>
+                </h4>
+                <p class="dek">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy habitant morbi.</p>
+            </header>
+        </div>
+    </div>-->
+        <div class="MustReadHeader">
+            <h3>All recipes</h3><hr />
+        </div>
+        @for (int i = 1; i < Model.Rows.Count; i++)
+        {
+            <div class="row" style="margin-left:45px;">
+                <div class="col-sm-4 mt-5">
+                    <div class="FoodBlock">
+                        <div class="FoodImage">
+                            @{
+                                var name3 = Path.GetFileName(Convert.ToString(Model.Rows[i][10]));
+                            }
+                            <img src="~/Content/Images/@name3" alt="" width="260" height="200" />
+                        </div>
+                        <div class="FoodInfo">
+                            <div class="FoodTitle">
+                                <h5>@Model.Rows[i][8]</h5>
+                            </div>
+                            <div class="ChefTitle">
+                                <h6>Rating : @Model.Rows[i][22]</h6>
+                            </div>
+                            <button class="ViewDetailsButton">View Recipe >></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <!--   <div class="row" style="margin-left:45px;">
+           <div class="col-sm-4 mt-5">
+               <div class="FoodBlock">
+                   <div class="FoodImage">
+                       <img src="~/Content/Images/recipe-3.jpg" alt="" width="260" height="200" />
+                   </div>
+                   <div class="FoodInfo">
+                       <div class="FoodTitle">
+                           <h5>Pepper Pasta</h5>
+                       </div>
+                       <div class="ChefTitle">
+                           <h6>Rating</h6>
+                       </div>
+                       <button class="ViewDetailsButton">View Recipe >></button>
+                   </div>
+               </div>
+           </div>
+           <div class="col-sm-4 mt-5">
+               <div class="FoodBlock2">
+                   <div class="FoodImage">
+                       <img src="~/Content/Images/recipe4.jpg" alt="" width="260" height="200" />
+                   </div>
+                   <div class="FoodInfo">
+                       <div class="FoodTitle">
+                           <h5>Grilled Chicken</h5>
+                       </div>
+                       <div class="ChefTitle">
+                           <h6>Rating</h6>
+                       </div>
+                       <button class="ViewDetailsButton">View Recipe  >></button>
+                   </div>
+               </div>
+           </div>
+           <div class="col-sm-4 mt-5">
+               <div class="FoodBlock2">
+                   <div class="FoodImage">
+                       <img src="~/Content/Images/recipe5.jpg" alt="" width="260" height="200" />
+                   </div>
+                   <div class="FoodInfo">
+                       <div class="FoodTitle">
+                           <h5>Shrimpy Shrimp</h5>
+                       </div>
+                       <div class="ChefTitle">
+                           <h6>Rating</h6>
+                       </div>
+                       <button class="ViewDetailsButton">View Recipe  >></button>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <center>-->
+        <script type="text/javascript">
+
+
+            var msg = '@TempData["userIdloggedIn"]';
+            if (msg != 0) {
+                alert("The user logged in is: " + msg);
+            }
+
+
+
+        </script>
+
+        </center>
+
+</body>
+</html>
+

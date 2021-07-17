@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "RestaurantSignup";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Signup.css" rel="stylesheet" />
+</head>
+
+<body style="background-image:url(../Content/Images/mid-bg12.jpg);">
+    <div class="row">
+        <div id="container">
+            <h1>Give Restaurant Information</h1>
+            <form action="RestaurantSignup" method="POST" enctype="multipart/form-data">
+                <div class="formText">
+                    <label> <i class="fas fa-user"></i> Restaurant Name: *</label>
+                    <input type="text" name="resNameInput" class="resNameInput" placeholder="Enter Restaurant name">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-location-arrow"></i> Location: *</label>
+                    <input type="text" name="resLocationInput" class="resLocationInput" placeholder="Enter Location">
+                </div>
+
+                <div class="formText">
+                    <label><i class="fa fa-map-marker"></i> Area: *</label>
+                    <input type="text" name="resAreaInput" class="resAreaInput" placeholder="Enter Area (Ex-Dhanmondi,Bashabo)">
+                </div>
+
+                <div class="formText">
+                    <label><i class="fa fa-gift"></i> Offers:</label>
+                    <input type="text" name="offerInput" class="offerInput" placeholder="Enter Special offers">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-upload"></i> Profile Picture:</label>
+                    <input type="file" name="proPic" accept="image/*">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-upload"></i> Cover Picture:</label>
+                    <input type="file" name="coverPic" accept="image/*">
+                </div>
+                <div class="formText">
+                    <label><i class="fas fa-lock"></i> Password:</label>
+                    <input type="password" name="resPasswordInput" class="password" placeholder="Enter Password">
+
+                </div>
+
+                <button class="submit-btn" name="submit_btn">Sign Up</button>
+            </form>
+
+        </div>
+    </div>
+
+    <center>
+        <script type="text/javascript">
+    $(document).ready(function () {
+
+        var msg = '@TempData["resname"]';
+        var msg2 = '@TempData["resloc"]';
+        var msg3 = '@TempData["resarea"]';
+        var msg4 = '@TempData["respass"]';
+        if (msg == '1') {
+            alert("Please Enter valid user name.");
+        }
+        else if (msg2 == '2') {
+            alert("Please eneter your location.");
+        }
+        else if (msg3 == '3') {
+            alert("Please eneter your area.");
+        }
+
+        else if (msg4 == '4') {
+            alert("Please enter valid password.");
+        }
+        
+
+
+    });
+        </script>
+
+    </center>
+
+</body>
+
+</html>
+
+
